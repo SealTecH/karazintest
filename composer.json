@@ -1,0 +1,18 @@
+{
+  "name": "sergiy_lilikovych/karazin_test",
+  "description": "Karazin test for web developers",
+  "minimum-stability": "stable",
+  "license": "GNU GPL 3",
+  "authors": [
+    {
+      "name": "Sergiy Lilikovych",
+      "email": "sergiy.lilikovych@gmail.com"
+    }
+  ],
+  "require": {
+    "smarty/smarty": "dev-master",
+    "dm/ajaxcom": "1.2.4",
+    "j4mie/idiorm": "v1.5.1",
+    "altorouter/altorouter": "dev-master"
+  }
+}
