@@ -3,7 +3,7 @@
  * Main configuration file
  */
 //system configs
-$config['sys']['plugin_dir'] = './Plugin';
+$config['sys']['plugin_dir'] = './Plugin/';
 //ORM configs
 $config['orm']['connection_string'] = '.mysql:host=localhost;dbname=karazin';
 $config['orm']['username'] = 'root';
@@ -17,7 +17,7 @@ $config['smarty'] = array(
     'compile_dir' => './data/tpl/compiled/',
     'cache_dir' => './data/tpl/cache/',
     'config_dir' => '',
-    'css' => '/data/css',
+    'css' => '/data/css/',
     'images' => '/data/images/',
     'js' => '/data/js/',
     'fonts' => '/data/fonts/',
@@ -29,7 +29,7 @@ $config['plugin'] = array(
     'controller_loaded' => array(
         'ForceLogin' => array(
             'right' => array('configsRead', 'templateEngineAccess', 'bootstrapAccess'),
-            'config' => array('controller' => array('Admin'), 'redirect' => ''),
+            'config' => array('controllers' => array('Admin'), 'redirect' => ''),
         ),
     ),
 );
