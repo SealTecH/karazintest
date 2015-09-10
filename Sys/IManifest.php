@@ -5,7 +5,7 @@
  * every model, view, controller and plugin must have it's own IMainfest implementation.
  */
 
-namespace sys;
+namespace Sys;
 
 
 interface IManifest

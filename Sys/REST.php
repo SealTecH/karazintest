@@ -4,7 +4,7 @@
  * Small bicycle for REST responses
  */
 
-namespace sys;
+namespace Sys;
 
 
 class REST

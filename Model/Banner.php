@@ -1,11 +1,11 @@
 <?php
-namespace model;
+namespace Model;
 
 
 use Bootstrap;
 use ORM;
 use PDO;
-use sys\GenericModel;
+use Sys\GenericModel;
 use sys\IManifest;
 use sys\ModelManifest;
 

@@ -4,9 +4,9 @@
  * Shows page with fake content
  */
 
-namespace controller;
+namespace Controller;
 
-use model\User;
+use Model\User;
 use sys\ControllerManifest;
 use sys\GenericController;
 use view\View;
