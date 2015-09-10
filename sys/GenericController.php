@@ -4,7 +4,7 @@
  * Parent for all controllers
  */
 
-namespace sys;
+namespace Sys;
 
 
 abstract class GenericController implements IManifest

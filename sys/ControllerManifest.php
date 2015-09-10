@@ -4,7 +4,7 @@
  * Read info in IMainfest.php
  */
 
-namespace sys;
+namespace Sys;
 
 
 abstract class ControllerManifest

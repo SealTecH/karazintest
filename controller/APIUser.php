@@ -3,13 +3,13 @@
  * User API
  * Allows users to register, edit profiles and so on
  */
-namespace controller;
+namespace Controller;
 
 use Bootstrap;
-use model\User;
+use Model\User;
 use sys\ControllerManifest;
 use sys\GenericController;
-use sys\REST;
+use Sys\REST;
 use view\View;
 
 class APIUserControllerManifest extends ControllerManifest

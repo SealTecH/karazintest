@@ -4,7 +4,7 @@ namespace Model;
 
 use Bootstrap;
 use ORM;
-use sys\GenericModel;
+use Sys\GenericModel;
 use sys\IManifest;
 use sys\ModelManifest;
 
