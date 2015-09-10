@@ -3,7 +3,7 @@
  * Main configuration file
  */
 //system configs
-$config['sys']['plugin_dir'] = './Plugin/';
+$config['sys']['plugin_dir'] = './plugin/';
 //ORM configs
 $config['orm']['connection_string'] = 'mysql:host=localhost;dbname=karazin';
 $config['orm']['username'] = 'root';
