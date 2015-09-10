@@ -7,7 +7,7 @@ include('./vendor/autoload.php');
  */
 function _autoload($className)
 {
-    $className = strtolower(str_replace('\\', DIRECTORY_SEPARATOR, $className));
+    $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
     if (file_exists($className . '.php')) {
         require_once $className . '.php';
         return true;
