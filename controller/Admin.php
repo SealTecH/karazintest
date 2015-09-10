@@ -54,6 +54,7 @@ class Admin extends GenericController
     {
         $this->view->te()->assign('users', $this->mUser->getUsers());
         $this->view->te()->assign('banners', $this->mBanner->getBanners());
+        $this->view->te()->assign('common', $this->mBanner->getCommonConfigs());
         $this->view->te()->display('admin.tpl');
     }
 

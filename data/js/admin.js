@@ -37,6 +37,7 @@ Banner.prototype.url_delete = function (id) {
     return "/banners/api/" + id + "/delete";
 };
 Banner.prototype.url_create = "/banners/api/create";
+Banner.prototype.url_set_common = "/banners/api/set-common";
 
 Banner.prototype.create = function (hint, active, link, priority, text) {
     $.ajax({
@@ -65,6 +66,19 @@ Banner.prototype.update = function (id, hint, active, link, priority, text) {
         type: "POST",
         dataType: "json",
         data: {id: id, hint: hint, active: active, link: link, priority: priority, text: text},
+        success: window.Banner._onUpdate,
+        error: function (data, status, jqXHR) {
+            toastr.error(status);
+        }
+    });
+};
+
+Banner.prototype.setCommon = function (dataObj) {
+    $.ajax({
+        url: this.url_set_common,
+        type: "POST",
+        dataType: "json",
+        data: dataObj,
         success: window.Banner._onUpdate,
         error: function (data, status, jqXHR) {
             toastr.error(status);

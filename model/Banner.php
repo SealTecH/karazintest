@@ -115,4 +115,14 @@ class Banner extends GenericModel
         return $banner->save();
     }
 
+    public function getCommonConfigs()
+    {
+        return unserialize(file_get_contents('./config/banner.common'));
+    }
+
+    public function setCommonConfigs($arg)
+    {
+        return file_put_contents('./config/banner.common', serialize($arg));
+    }
+
 }

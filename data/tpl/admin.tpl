@@ -7,6 +7,24 @@
         <div class="page-header">
             <h1>Administration</h1>
         </div>
+        <h2>Common banner display settings</h2>
+
+        <div class="form-group">
+            <label for="banners-count">Number of banners to display</label>
+            <input type="number" min="0" max="{count($banners)}" class="form-control" id="banners-count"
+                   value="{$common.bannercount}">
+            <span id="helpBlock" class="help-block">System will display no more than defined number of banners. Enter "0" to disable limitations.</span>
+        </div>
+
+        {literal}
+            <div class="form-group">
+                <a class="btn btn-success"
+                   onclick="window.Banner.setCommon({bannercount:$('#banners-count').val()});">Save</a>
+            </div>
+        {/literal}
+
+
+
         <h2>Banners</h2>
 
         <div class="panel-group" id="accordion-banners" role="tablist" aria-multiselectable="true">

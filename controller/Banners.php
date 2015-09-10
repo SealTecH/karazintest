@@ -26,6 +26,7 @@ class BannersControllerManifest extends ControllerManifest
             array('GET', '/banners/errorLoadImage', array('Controller\Banners', 'errorLoadImage')),
             array('POST', '/banners/api/[i:id]/update', array('Controller\Banners', 'apiUpdate')),
             array('POST', '/banners/api/create', array('Controller\Banners', 'apiCreate')),
+            array('POST', '/banners/api/set-common', array('Controller\Banners', 'apiSetCommon')),
             array('POST', '/banners/api/[i:id]/delete', array('Controller\Banners', 'apiDelete')),
             array('POST', '/banners/api/[i:id]/set-image', array('Controller\Banners', 'apiSetImage')),
         );
@@ -56,8 +57,12 @@ class Banners extends GenericController
     {
         $bannersView = new View();
         //display all active banners using their priority
+        $count = intval($this->mBanner->getCommonConfigs()['bannercount']);
+        if ($this->mBanner->getActiveCount() < $count || $count <= 0) {
+            $count = $this->mBanner->getActiveCount();
+        }
         $bannersView->te()->assign('banners', $this->mBanner->getRandomUsingPriority(
-            $this->mBanner->getActiveCount()
+            $count
         ));
         $bannersView->te()->display('banners.tpl');
     }
@@ -162,6 +167,20 @@ class Banners extends GenericController
             $banner->save();
             echo('<script>window.close();</script>');//TODO: bicycle :)
         }
+    }
+
+    public function apiSetCommon()
+    {
+        $common = $this->mBanner->getCommonConfigs();
+        $allowed = array('bannercount');
+        foreach ($_POST as $key => $val) {
+            if (in_array(strtolower($key), $allowed)) {
+                $common[$key] = $val;
+            }
+        }
+        $this->mBanner->setCommonConfigs($common);
+        REST::success();
+        return;
     }
 
 }
