@@ -1,0 +1,77 @@
+/*container vertical alignment*/
+/* thanks to https://stackoverflow.com/questions/18516317/vertically-align-an-image-inside-a-div-with-responsive-height */
+#container {
+    width: 300px !important;
+    padding: 25px;
+    padding-top: 15px;
+    margin-top: 10px;
+    border: 1px dashed #a6a6a6;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle; /* vertical alignment of the inline element */
+    font: 16px/1 Arial sans-serif; /* <-- reset the font property */
+}
+
+.center-container {
+    height: 300px;
+    text-align: center; /* align the inline(-block) elements horizontally */
+    font: 0/0 a; /* remove the gap between inline(-block) elements */
+}
+
+.center-container:before {
+    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle; /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+/**/
+#logo {
+    margin-top: 5px;
+    margin-bottom: 16px; /*magic!*/
+    height: 70px;
+    width: 250px;
+    background-size: cover;
+    background-image: url('../images/logo.png');
+}
+
+div.banner {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 50px !important;
+    overflow: hidden;
+    width: 250px;
+    background-size: cover;
+    position: relative;
+}
+
+a.banner {
+    text-decoration: none;
+}
+
+div.banner > .banner-overlay {
+    background: rgba(255, 255, 255, .75);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+}
+
+div.banner > .banner-overlay:hover {
+    opacity: 1;
+}
+
+.banner-text {
+    width: 100%;
+    height: 100%;
+    /*thanks to https://stackoverflow.com/a/13515693*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    /***/
+    font-family: Arial, serif;
+    color: rgba(100, 100, 100, 1);
+}
