@@ -45,8 +45,8 @@ class ForceLogin extends GenericPlugin
         $isAuthorized = $mUser->isAuthorized($minLevel);
         $this->template_engine->assign('isAuthorized', $isAuthorized);
         $this->template_engine->assign('controller', $controllerName);
-        if (in_array($controllerName, array_keys($this->config['controllers'])) && !$isAuthorized) {
-            header('Location: /' . implode($this->config['redirect']));
+        if (in_array($controllerName, $this->config['controllers']) && !$isAuthorized) {
+            header('Location: /' . $this->config['redirect']);
         }
     }
 
