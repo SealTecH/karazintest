@@ -5,12 +5,13 @@
 //system configs
 $config['sys']['plugin_dir'] = './Plugin/';
 //ORM configs
-$config['orm']['connection_string'] = '.mysql:host=localhost;dbname=karazin';
+$config['orm']['connection_string'] = 'mysql:host=localhost;dbname=karazin';
 $config['orm']['username'] = 'root';
 $config['orm']['password'] = '';
 //WWW settings
 $config['www']['base_path'] = 'http://karazin';
 $config['www']['email'] = 'admin@localhost';
+$config['www']['banners'] = './data/images/banners/';
 //template engine
 $config['smarty'] = array(
     'tpl_dir' => './data/tpl/',
@@ -23,13 +24,13 @@ $config['smarty'] = array(
     'fonts' => '/data/fonts/',
     'baseURL' => 'http://karazin');
 //the list of controllers
-$config['controller'] = array('Login', 'Banners', 'DummyContent', 'Admin');
+$config['controller'] = array('Login', 'Banners', 'DummyContent', 'APIUser', 'Admin');
 //plugins by action
 $config['plugin'] = array(
     'controller_loaded' => array(
         'ForceLogin' => array(
             'right' => array('configsRead', 'templateEngineAccess', 'bootstrapAccess'),
-            'config' => array('controllers' => array('Admin'), 'redirect' => ''),
+            'config' => array('controllers' => array('Admin'), 'redirect' => 'login'),
         ),
     ),
 );
