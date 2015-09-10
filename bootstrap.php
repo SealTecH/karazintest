@@ -154,7 +154,7 @@ class Bootstrap
     {
         switch ($kind) {
             case 'templateEngineAccess':
-                $obj->template_engine = &$this->smarty;
+                $obj->template_engine = &$this->getTE();
                 break;
             case 'configsRead':
                 $obj->configs = $this->config;
@@ -194,10 +194,10 @@ class Bootstrap
                 throw new Exception("Class [$pluginName] not found while loading $filename");
             }
             $plugin = new $pluginName();
-            if (isset($pluginRecord['config_file']) && method_exists($plugin, 'set_config')) {
+            if (isset($pluginRecord['config']) && method_exists($plugin, 'set_config')) {
                 call_user_func(array($plugin, 'set_config'), $pluginRecord['config']);
             }
-            foreach (array_keys($pluginRecord['right']) as $row) {
+            foreach ($pluginRecord['right'] as $row) {
                 $this->grant_right($plugin, (string)$row);
             }
             if (method_exists($plugin, '__initialized')) {
