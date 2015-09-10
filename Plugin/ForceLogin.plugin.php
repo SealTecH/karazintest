@@ -1,9 +1,9 @@
 <?php
-namespace Plugin;
+namespace plugin;
 
 use model\User;
-use Sys\GenericPlugin;
-use Sys\GenericController;
+use sys\GenericPlugin;
+use sys\GenericController;
 use sys\IManifest;
 use sys\PluginManifest;
 

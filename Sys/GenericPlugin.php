@@ -1,5 +1,5 @@
 <?php
-namespace Sys;
+namespace sys;
 
 use Bootstrap;
 use Smarty;

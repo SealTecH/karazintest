@@ -3,12 +3,12 @@
  * Admin controller
  * Administration features
  */
-namespace Controller;
+namespace controller;
 
 use Bootstrap;
 use DM\AjaxCom\Handler;
-use Model\Banner;
-use Model\User;
+use model\Banner;
+use model\User;
 use sys\ControllerManifest;
 use sys\GenericController;
 use Sys\REST;

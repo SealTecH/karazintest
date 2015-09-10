@@ -4,7 +4,7 @@
  * Parent for all models
  */
 
-namespace Sys;
+namespace sys;
 
 
 abstract class GenericModel implements IManifest

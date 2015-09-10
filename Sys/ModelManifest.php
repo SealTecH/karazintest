@@ -4,7 +4,7 @@
  * Read info in IMainfest.php
  */
 
-namespace Sys;
+namespace sys;
 
 
 abstract class ModelManifest

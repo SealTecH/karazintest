@@ -4,9 +4,9 @@
  * Shows login form or user profile
  */
 
-namespace Controller;
+namespace controller;
 
-use Model\User;
+use model\User;
 use sys\ControllerManifest;
 use sys\GenericController;
 use view\View;

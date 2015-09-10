@@ -3,13 +3,13 @@
  * Banners controller
  */
 
-namespace Controller;
+namespace controller;
 
-use Model\Banner;
-use Model\User;
+use model\Banner;
+use model\User;
 use sys\ControllerManifest;
 use sys\GenericController;
-use Sys\REST;
+use sys\REST;
 use view\View;
 
 class BannersControllerManifest extends ControllerManifest

@@ -4,7 +4,7 @@
  * Parent for all views
  */
 
-namespace Sys;
+namespace sys;
 
 use Smarty;
 
